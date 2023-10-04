@@ -1,7 +1,13 @@
-<script setup<% if (ts) { %> lang="ts"<% } %>>
-import <% if (!component) { %>{ <% } %><%= componentNamePascalCase %><% if (!component) { %> }<% } %> from './components/';
+<template>
+  <div id="app">
+    <router-view />
+  </div>
+</template>
+
+<script>
+  export default {
+  }
 </script>
 
-<template>
-  <<%= componentNamePascalCase %>/>
-</template>
+<style lang="scss" scoped>
+</style>

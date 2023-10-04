@@ -1,6 +1,6 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
+import vue from "@vitejs/plugin-vue2";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 <% if(ts) { -%>
 import dts from "vite-plugin-dts";
@@ -11,7 +11,7 @@ export default defineConfig({
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, "src/components/index.<%= language %>"),
+      entry: resolve(__dirname, "src/entry.esm.js"),
       name: "<%= name %>",
       // the proper extensions will be added
       fileName: (format) => `<%= fileName %>.${format}.js`,
@@ -26,16 +26,17 @@ export default defineConfig({
         globals: {
           vue: "Vue",
         },
+        exports: "named"
       },
     },
   },
   plugins: [
     vue(),
     cssInjectedByJsPlugin(),
-    <% if(ts) { -%>
+<% if(ts) { -%>
     dts({
       insertTypesEntry: true,
     }),
-    <% } -%>
+<% } -%>
   ],
 });

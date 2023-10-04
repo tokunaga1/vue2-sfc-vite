@@ -5,8 +5,8 @@ const inquirerUserOptions = [
         name: "vueVersion",
         message: "Which version of Vue are you writing for?",
         choices: [
-            { name: "Vue 3", value: "vue3" },
             { name: "Vue 2", value: "vue2" },
+            { name: "Vue 3", value: "vue3" },
         ],
     },
     {
@@ -14,8 +14,8 @@ const inquirerUserOptions = [
         name: "type",
         message: "Is this a single component or a library?",
         choices: [
-            { name: "Single Component", value: "component" },
             { name: "Library", value: "library" },
+            { name: "Single Component", value: "component" },
         ],
         // filter(val) {
         //   return val.toLowerCase();
@@ -50,8 +50,8 @@ const inquirerUserOptions = [
         name: "language",
         message: "Will this component be written in JavaScript or TypeScript?",
         choices: [
-            { name: "TypeScript", value: "ts" },
             { name: "JavaScript", value: "js" },
+            { name: "TypeScript", value: "ts" },
         ],
     },
     {

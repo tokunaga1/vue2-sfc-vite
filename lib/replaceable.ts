@@ -157,6 +157,57 @@ const replaceable:Replaceable[] = [
       "ts"
     ]
   },
+
+  /**
+   * copy files
+   */
+  {
+    stubName: "index.js.ejs",
+    replaces: {},
+    target: {
+      fileName: "index.js",
+      directory: "./src/router",
+    },
+    language: [
+      "js", "ts"
+    ]
+  },
+  {
+    stubName: "index.js.ejs",
+    replaces: {},
+    target: {
+      fileName: "index.js",
+      directory: "./src/store",
+    },
+    language: [
+      "js", "ts"
+    ]
+  },
+  {
+    stubName: "index.vue.ejs",
+    replaces: {
+      componentName: "index",
+    },
+    target: {
+      fileName: "index.vue",
+      directory: "./src/views",
+    },
+    language: [
+      "js", "ts"
+    ]
+  },
+  {
+    stubName: "entry.esm.js.ejs",
+    replaces: {},
+    target: {
+      fileName: "entry.esm.js",
+      directory: "./src",
+    },
+    language: [
+      "js", "ts"
+    ]
+  },
+
 ];
 
 export default replaceable;

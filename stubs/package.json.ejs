@@ -20,9 +20,9 @@
 
   "main": "./dist/<%= kebabCase %>.umd.js",
   "module": "./dist/<%= kebabCase %>.es.js",
-  <% if(ts) { -%>
+<% if(ts) { -%>
   "types": "./dist/<%= kebabCase %>.d.ts",
-  <% } -%>
+<% } -%>
   "exports": {
     ".": {
       "import": "./dist/<%= kebabCase %>.es.js",
@@ -32,28 +32,30 @@
 
   "scripts": {
     "dev": "vite",
-    <% if(ts) { -%>
+<% if(ts) { -%>
     "build": "vue-tsc && vite build",
-    <% } else { -%>
+<% } else { -%>
     "build": "vite build",
-    <% } -%>
+<% } -%>
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.41"
+    "vue": "^2.7.14",
+    "vue-router": "^3.6.5",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^3.2.0",
+    "@vitejs/plugin-vue2": "^2.2.0",
     "sass": "^1.57.1",
-    <% if(ts) { -%>
+<% if(ts) { -%>
     "typescript": "^4.6.4",
     "vite-plugin-dts": "^1.7.1",
     "vue-tsc": "^1.0.9",
-    <% } -%>
+<% } -%>
     "vite": "^3.2.3",
     "vite-plugin-css-injected-by-js": "^2.4.0"
   },
   "peerDependencies": {
-      "vue": "^3.2.41"
+      "vue": "^2.7.14"
   }
 }
