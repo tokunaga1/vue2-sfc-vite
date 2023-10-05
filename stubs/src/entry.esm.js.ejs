@@ -3,7 +3,7 @@ import * as components from './components/index';
 // import bs from './store/bs';
 
 // install function executed by Vue.use()
-const install = function installComponents (Vue, options = {}) {
+const install = function installPlugin (Vue, options = {}) {
   Object.entries(components).forEach(([componentName, component]) => {
     Vue.component(componentName, component);
   });
