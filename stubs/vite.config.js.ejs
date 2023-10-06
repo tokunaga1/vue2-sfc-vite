@@ -2,6 +2,7 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue2";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
+import inject from "@rollup/plugin-inject";
 <% if(ts) { -%>
 import dts from "vite-plugin-dts";
 <% } -%>
@@ -19,7 +20,9 @@ export default defineConfig({
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ["vue"],
+      external: [
+        "vue",
+      ],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
@@ -33,6 +36,9 @@ export default defineConfig({
   plugins: [
     vue(),
     cssInjectedByJsPlugin(),
+    inject({
+      // _: 'lodash',
+    })
 <% if(ts) { -%>
     dts({
       insertTypesEntry: true,
