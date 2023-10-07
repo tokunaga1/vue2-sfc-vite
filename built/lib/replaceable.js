@@ -204,5 +204,16 @@ const replaceable = [
             "js", "ts"
         ]
     },
+    {
+        stubName: "nuxt.config.setup.js.ejs",
+        replaces: {},
+        target: {
+            fileName: "nuxt.config.setup.js",
+            directory: "./src",
+        },
+        language: [
+            "js", "ts"
+        ]
+    },
 ];
 export default replaceable;

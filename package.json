@@ -28,7 +28,8 @@
     "vue-sfc-vite": "./built/src/index.js"
   },
   "scripts": {
-    "start": "vue-sfc-vite"
+    "start": "vue-sfc-vite",
+    "compile": "tsc"
   },
   "type": "module",
   "dependencies": {
